@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let dog = {
+            name: '흰둥이',
+            owner: '신짱구',
+            age: 1,
+            family: ['신짱구', '신짱아', '봉미선', '신형만'],
+            walk: function () {
+               console.log(this.name + '는 산책 중 입니다.')
+            },
+         }
+
+         //  객체 내부의 일반 속성값 읽기
+         const test = 'name' //방법3
+
+         console.log(dog.name) //방법1
+         console.log(dog['name']) //방법2
+
+         console.log(dog.age) //방법1
+         console.log(dog['age']) //방법2
+
+         console.log('')
+
+         //  객체 내부의 배열 속성 값 읽기
+         console.log(dog.family) //배열값 가져오기
+         console.log(dog.family[0]) //신짱구만 가져오기
+         console.log(dog.family[1]) //신짱아만 가져오기
+         console.log(dog.family[2]) //봉미선만 가져오기
+         console.log(dog.family[3]) //신형만만 가져오기
+
+         console.log(dog['family']) //방법2 배열값 가져오기
+         console.log(dog['family'][0]) //방법2 신짱구 가져오기
+         console.log(dog['family'][1]) //방법2 신짱아 가져오기
+         console.log(dog['family'][2]) //방법2 봉미선 가져오기
+         console.log(dog['family'][3]) //방법2 신형만 가져오기
+
+         console.log('')
+
+         // 객체 내부의 함수 실행하기
+         dog.walk() // -> 흰등이는 산책 중 입니다 출력
+         console.log(dog.walk) // ->함수의 내용을 출력(값출력x)
+         console.log(dog['walk']) // ->함수의 내용을 출력(값출력x)
+      </script>
+   </body>
+</html>

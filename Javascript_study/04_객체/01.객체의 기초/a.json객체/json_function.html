@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const iPhone15 = {
+            //제이슨 객체 (문자열 아님)
+            model: 'iPhone15',
+            manufacturer: 'Apple',
+            releaseYear: 2023,
+            color: ['Black', 'Blue', 'Pink', 'Yellow', 'Green'],
+         }
+
+         console.log(iPhone15)
+         document.write(iPhone15)
+         document.write('<hr />')
+
+         //  json객체를 문자열로 바꾸기
+         const jsonToString1 = JSON.stringify(iPhone15)
+         document.write(jsonToString1)
+         console.log(jsonToString1)
+
+         // 문자열로 바뀐 객체 예쁘게 정돈하기(콘솔에)
+         const jsonToString2 = JSON.stringify(iPhone15, null, 2)
+         console.log(jsonToString2)
+
+         //  문자열을 json객체로 바꾸기
+         const iPhone15_2 = '{"model":"iPhone15","manufacturer":"Apple","releaseYear":2023,"color":["Black","Blue","Pink","Yellow","Green"]}' // -> 도큐먼트에(뷰포트) 있던 거 드래그해서 가져옴
+
+         const stringTojson = JSON.parse(iPhone15_2)
+         document.write(stringTojson)
+         console.log(stringTojson)
+      </script>
+   </body>
+</html>
