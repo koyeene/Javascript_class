@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <input type="text" />inch<br />
+      <!-- 인치 값을 입력하는 텍스트 필드 -->
+      <button>계산</button>
+      <!-- 계산 버튼 -->
+      <p></p>
+      <!-- 결과를 보여줄 영역 -->
+
+      <script>
+         const input = document.querySelector('input') // 입력창
+         const button = document.querySelector('button') // 버튼
+         const p = document.querySelector('p') // 결과를 출력할 요소
+
+         button.addEventListener('click', () => {
+            const inch = Number(input.value) //input창에 입력된 값을 숫자로 바꾼다
+
+            // console.log(inch) -> NaN출력 (숫자냐 아니냐)
+            // 숫자가 아니면 true, 숫자면 false
+
+            if (isNaN(inch)) {
+               // 숫자가 아니면 이 부분이 실행 ^
+               p.textContent = '숫자를 입력해주세요' // 숫자를 안 적었으면 이 메시지를 출력
+               return // 함수 종료
+            }
+
+            // 숫자가 맞으면 인치를 센티미터로 변환해요 (1인치 = 2.54cm)
+            const cm = inch * 2.54
+            // 변환된 결과를 화면에 출력
+            p.textContent = `${cm} cm` // 결과를 "몇 cm" 형식으로 보여줌
+         })
+      </script>
+   </body>
+</html>
