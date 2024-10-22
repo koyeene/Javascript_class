@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //json객체
+
+         let dog = {
+            name: '흰둥이', // key : value -> key는 중복이 될 수 없다
+            owner: '신짱구',
+            age: 1,
+            family: ['신짱구', '신짱아', '봉미선', '신형만'],
+            walk: function () {
+               console.log(this.name + '는 산책 중입니다') //화살표함수는 this.name 안먹음
+            },
+         }
+
+         //  방법1
+         //  console.log(dog.name)
+         //  console.log(dog.owner)
+         console.log(dog.family[1]) //신짱아 인덱스번호
+         //  dog.walk() //함수실행
+
+         // 방법2
+         console.log(dog['name'])
+         console.log(dog['owner'])
+         console.log(dog['family'][1]) //신짱아 인덱스번호
+         dog['walk']() //함수실행
+
+         console.log('')
+
+         //  값 수정 흰둥이 -> 검둥이로 변경
+         dog.name = '검둥이'
+         console.log(dog)
+
+         console.log(dog.family[1]) = '고예은'
+         console.log(dog)
+
+         //값 추가
+         dog.date = '24/10/22'
+         console.log(dog)
+
+         //값 삭제
+         delete dog.name //delete를 앞에 붙여준다
+         delete(dog['owner'])
+      </script>
+   </body>
+</html>

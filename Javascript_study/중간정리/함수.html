@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 매개변수 a와 b를 받아서 더하해서 리턴하는 함수
+         //  3가지 방법
+
+         // 1. function1
+
+         function add(a, b) {
+            return a + b
+         }
+
+         // 2. function2
+
+         const add = function () {
+            return a + b
+         }
+
+         // 3. function3 화살표 함수 (생략 중요)
+         const add = () => {
+            return a + b
+         }
+
+         const add = () => a + b //생략문
+
+         const test = () => console.log(test) //생략문
+
+         const objF = () => ({
+            test: 'hi', //생략문
+         })
+
+         //  콜백함수 - 매개변수에 함수를 준다
+
+         function printNumber(num, callback) {
+            console.log('num:', num)
+            callback(num) //5
+         }
+
+         printNumber(5, function (num) {
+            console.log('num * num ', num * num) //25
+         }) //es5
+
+         printNumber(5, (num) => {
+            console.log('num * num ', num * num) //25
+         }) //es6
+
+         //분리코드
+         const test = (num) => {
+            console.log('num * num ', num * num) //25
+         }
+
+         printNumber(5, test)
+         printNumber(5, test)
+
+         //  forEach 함수 (배열에서만 사용가능)
+         const array1 = ['a', 'b', 'c']
+
+         array1.forEach((value /*값*/, idx /*배열*/, array /*전체적인 배열데이터 가져옴*/) => {
+            console.log(value, idx, array)
+         })
+
+         //  filter 함수 => 필요한 것만 걸러준다
+         const words = ['옷장', '컴퓨터', '식기세척기', '텔레비전']
+
+         const result = words
+            .filter((word, idx, arr) => {
+               // 리턴문이 true일때 해당 데이터를 result에 저장
+               return word.length >= 4
+            })
+            .forEach((word) => {
+               console.log(word) //배열데이터가 아닌 식기세척기, 텔레비전을 가져온다
+            })
+
+         console.log(result) // [식기세척기, 텔레비전] 배열형태로 준다
+
+         //map 함수 -> 무언가를 덧붙여 새로운 것으로 만들어준다
+
+         const array2 = [1, 4, 9, 16]
+         const result2 = array2.map((value) => value * 2)
+         // console.log(value, idx, arr) //값만 가져오고 싶을 때는 value만 써준다
+
+         console.log(result2)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 1. 아래는 전부 false
+         var test //nudefind : 아무것도 정의되지 않는다
+         var num1 = null
+         var str = '' //빈문자열
+         var num2 = 0
+
+         if (!str) {
+            console.log('빈문자열입니다')
+         }
+
+         //  2. const, let, var 차이점
+         var value1 = 0
+         var value1 = 1
+         value1 = 2 // 변수 정의, 값 덮어쓰기 가능 (자유로움) -> 잘안씀
+
+         let value2 = 0
+         //  let value2 = 1 //같은 변수명 불가능
+         value2 = 2 // 값 덮어쓰기는 가능
+
+         const value3 = 1
+         //  const value3 = 2 //같은 변수 재정의 안됨
+         value3 = 10 //값 덮어쓰기 안됨
+
+         //  3.
+      </script>
+   </body>
+</html>
