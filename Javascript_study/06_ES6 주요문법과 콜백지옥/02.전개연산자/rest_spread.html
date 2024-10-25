@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 배열 obj1을 선언, 두 개의 요소(우유, 식빵)을 넣음
+         const obj1 = ['우유', '식빵']
+
+         // obj2에 obj1을 넣습니다.
+         // 여기서는 obj2가 obj1과 같은 배열을 가리키고 있습니다.
+
+         const obj2 = obj1 // 둘 다 같은 배열을 공유하게 된다
+
+         obj1.push('고구마') // obj1 배열에 '고구마'를 추가합니다.
+         obj1.push('토마토') // obj1 배열에 '토마토'도 추가합니다.
+
+         // 이제 obj1 배열에는 ['우유', '식빵', '고구마', '토마토']가 들어가게됨
+
+         console.log(obj1)
+         console.log(obj2)
+      </script>
+   </body>
+</html>
